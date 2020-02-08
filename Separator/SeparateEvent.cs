@@ -1,15 +1,14 @@
-﻿using Separator;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArrayListApp
+namespace Separator
 {
-    class Test
+    public class SeparateEvent
     {
         public delegate void SeparatorDelegate();
         public event SeparatorDelegate OnSeparate;
+
         public void Display()
         {
             OnSeparate();
