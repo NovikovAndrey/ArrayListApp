@@ -10,7 +10,7 @@ namespace ArrayListApp
        
         static void Main(string[] args)
         {
-            ConsoleSeparator consoleSeparator = new ConsoleSeparator('-', 50);
+            ConsoleSeparator consoleSeparator = new ConsoleSeparator('_', 50);
             SeparateEvent separateEvent = new SeparateEvent();
             separateEvent.OnSeparate += consoleSeparator.Separator;
             ArrayList list = new ArrayList();
@@ -21,16 +21,23 @@ namespace ArrayListApp
             {
                 Console.WriteLine(o);
             }
-            separateEvent.Display();
+            list.SetSeparate(separateEvent);
             list.RemoveAt(0);
             list.Reverse();
             Console.WriteLine(list);
-            separateEvent.Display();
+            list.SetSeparate(separateEvent);
             for (int i = 0; i < list.Count; i++)
             {
                 Console.WriteLine(list[i]);
             }
             Console.ReadKey();
+        }
+    }
+    public static class Test
+    {
+        public static void SetSeparate(this ArrayList arrayList, SeparateEvent separateEvent)
+        {
+            separateEvent.Display();
         }
     }
 }
