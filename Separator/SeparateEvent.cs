@@ -12,7 +12,7 @@ namespace Separator
         public void Display()
         {
             OnSeparate();
-            Console.WriteLine("New conclusion");
+           
             OnSeparate();
         }
     }
